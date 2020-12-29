@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Segment , Image, Item, Header, Button } from 'semantic-ui-react'
+import sd from './culture.jpg'; 
 
 
 const eventImageStyle = {
@@ -22,7 +23,7 @@ const EventDetailedHeader = ({event}) => {
         
             <Segment.Group>
     <Segment basic attached="top" style={{padding: '0'}}>
-        <Image src={`/assets/categoryImages/${event.category}.jpg`} fluid style={eventImageStyle} />
+        <Image src={sd} fluid style={eventImageStyle} />
 
         <Segment basic style={eventImageTextStyle}  >
             <Item.Group>
@@ -43,7 +44,7 @@ const EventDetailedHeader = ({event}) => {
         </Segment>
     </Segment>
 
-    <Segment attached="bottom">
+    <Segment attached="bottom" clearing>
      
 
         <Button as={Link} to={`/manage/${event.id}`}  color="orange" floated="right">

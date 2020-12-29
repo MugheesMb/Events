@@ -33,9 +33,7 @@ const EventDetailedInfo = ({event}) => {
             <Grid.Column width={11}>
                 <span>{event.venue}</span>
             </Grid.Column>
-            <Grid.Column width={4}>
-                <Button color="teal" size="tiny" content="Show Map"/>
-            </Grid.Column>
+        
         </Grid>
     </Segment>
 </Segment.Group>
