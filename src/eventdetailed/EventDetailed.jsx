@@ -20,7 +20,7 @@ const EventDetailed = ({match}) => {
                 </Grid.Column>
 
                 <Grid.Column width={6} >
-                        <EventDetailedSideBar attendee={event.attendees}  />
+                        <EventDetailedSideBar attendee={event.attendees} event={event}  />
                 </Grid.Column>
             </Grid>
         

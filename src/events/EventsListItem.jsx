@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Button, Icon, Item, List, Segment } from 'semantic-ui-react'
 import { deleteEvent } from './eventActions'
-import EventListAttendee from './EventListAttendee'
+
 
 const EventsListItem = ({event  }) => {
 
@@ -14,7 +14,7 @@ const EventsListItem = ({event  }) => {
             <Segment>
                 <Item.Group>
                     <Item>
-                        <Item.Image size='tiny' circular src={event.hostPhotoURL} />
+                        <Item.Image size='tiny' circular src={`https://randomuser.me/api/portraits/men/${event.id}.jpg`} />
                         <Item.Content>
                             <Item.Header content={event.title} />
                             <Item.Description>
@@ -30,15 +30,7 @@ const EventsListItem = ({event  }) => {
                     <Icon name='marker' /> {event.venue}
                 </span>
             </Segment>
-            <Segment  >
-                <List horizontal>
-                    { event.attendees.map(attendee => (
- <EventListAttendee key={attendee.id} attendee={attendee} /> 
-                    )) }
-                    
-                    
-                </List>
-            </Segment>
+           
             <Segment clearing>
                 <div>{event.description}</div>
                 <Button onClick={() => dispatch(deleteEvent(event.id))} color='red' floated='right' content='Delete' />
