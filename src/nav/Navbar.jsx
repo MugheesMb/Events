@@ -1,23 +1,17 @@
-import React, { useState } from 'react'
-import { NavLink , Link, useHistory } from 'react-router-dom'
-import { Button, Container, Menu } from 'semantic-ui-react'
+import React from 'react'
+import { NavLink , Link } from 'react-router-dom'
+import { Button, Container, Menu ,Image} from 'semantic-ui-react'
 
 
-const Navbar = ({setFormOpen}) => {
-        const history = useHistory();
-    const [authenticated, setAuthenticated] = useState(false);
-    
-    function handleSignOut() {
-        setAuthenticated(false);
-        history.push('/');
-    }
+const Navbar = () => {
+  
 
     return (
         <>
         <Menu inverted fixed='top'>
             <Container>
                 <Menu.Item as={Link} to='/' header>
-                    <img src="/assets/logo.png" alt="logo" style={{ marginRight: 15 }} />
+                
                     Re-vents
                 </Menu.Item>
                 <Menu.Item as={NavLink} to='/events' name='Events' />
